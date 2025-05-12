@@ -3,6 +3,7 @@ package com.getafesoftwarefactory.ifct0062_2025_supergames.services;
 import com.getafesoftwarefactory.ifct0062_2025_supergames.model.Genre;
 import com.getafesoftwarefactory.ifct0062_2025_supergames.model.Videogame;
 import com.getafesoftwarefactory.ifct0062_2025_supergames.repository.IGenreRepository;
+import com.getafesoftwarefactory.ifct0062_2025_supergames.repository.IVideogameRepository;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,9 @@ public class VideogameServiceTest {
     @Autowired
     IGenreRepository genreRepository;
 
+    @Autowired
+    IVideogameRepository videoGameRepository;
+
     @Test
     public void createVideogame() {
         Genre genero = new Genre("Genero Borrar", "Descripción Borrar");
@@ -24,5 +28,7 @@ public class VideogameServiceTest {
         Videogame videogame = new Videogame("Borrar", "Platform", true, 100, true, genero);
         videogame = videogameService.createVideogame(videogame);
         assertNotNull(videogame);
+        this.videoGameRepository.delete(videogame);
+        this.genreRepository.delete(genero);
     }
 }
