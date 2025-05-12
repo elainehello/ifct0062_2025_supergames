@@ -35,6 +35,10 @@
         <tr th:each="videojuego : ${videojuegos}">
             <td th:text="${videogame.id}"></td>
             <td th:text="${videogame.title}"></td>
+            <td th:text="${videogame.platform}"></td>
+            <td th:text="${videogame.multiplayer}"></td>
+            <td th:text="${videogame.price}"></td>
+            <td th:text="${videogame.genre.name}"></td>
             <td>PS5</td>
             <td>No</td>
             <td>59</td>

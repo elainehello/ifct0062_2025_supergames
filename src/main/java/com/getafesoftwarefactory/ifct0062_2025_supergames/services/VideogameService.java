@@ -17,4 +17,12 @@ public class VideogameService {
 
         return videogameRepository.findAll();
     }
+
+    public Videogame createVideogame(Videogame videogame){
+        return videogameRepository.save(videogame);
+    }
+
+    public Videogame updateVideogame(Videogame videogame){
+        return videogameRepository.save(videogame);
+    }
 }
