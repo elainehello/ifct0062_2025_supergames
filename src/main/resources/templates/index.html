@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Videojuegos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <nav>
+        <ul class="nav-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Crear</a></li>
+            <li><a href="#">Buscar</a></li>
+            <li><a href="#">Acerca de...</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <h1>Lista de Videojuegos</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Título</th>
+            <th>Plataforma</th>
+            <th>Multijugador</th>
+            <th>Precio (€)</th>
+            <th>Género</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Ejemplo de registros -->
+        <tr th:each="videojuego : ${videojuegos}">
+            <td th:text="${videogame.id}"></td>
+            <td th:text="${videogame.title}"></td>
+            <td>PS5</td>
+            <td>No</td>
+            <td>59</td>
+            <td>Aventura</td>
+        </tr>
+        </tbody>
+    </table>
+</main>
+</body>
+</html>
